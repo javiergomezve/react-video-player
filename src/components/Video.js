@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 
-import StykedVideoWrapper from './styles/StyledVideoWrapper';
+import StyledVideoWrapper from './styles/StyledVideoWrapper';
 import StyledVideo from './styles/StylesdVideo';
 
-const Video = props => (
+const Video = ({ active, autoplay, endCallback, progressCallback }) => (
   <StyledVideo>
     <StyledVideoWrapper>
       <ReactPlayer
@@ -14,7 +14,7 @@ const Video = props => (
         playing={autoplay}
         controls={true}
         url={active.video}
-        onEnded={endedCallback}
+        onEnded={endCallback}
         onProgress={progressCallback}
       />
     </StyledVideoWrapper>
